@@ -43,6 +43,7 @@ import slimeknights.tconstruct.library.tools.nbt.MaterialNBT;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.part.IToolPart;
 import slimeknights.tconstruct.library.tools.part.ToolPartItem;
+import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.modifiers.slotless.OverslimeModifier;
 
 import java.util.List;
@@ -231,12 +232,16 @@ public class ToolDisassemble {
                                         .equals(modifier))
                                 .toList();
                         if (!recipesForModifier1.isEmpty()) {
-                            int cap = toolStack.getStats().getInt(OverslimeModifier.OVERSLIME_STAT);
+
+
+                            int cap = TinkerModifiers.overslime.get().getShield(toolStack);
+
+                            //player.displayClientMessage(Component.literal(String.valueOf(cap)),true);
                             OverslimeModifierRecipe recipe = recipesForModifier1.get(1);
                             IRecipeWithInput ir = ((IRecipeWithInput) recipe);
                             Ingredient input = ir.tic$getInput();
                             ItemStack stack1 = new ItemStack(Items.SLIME_BALL);  // 固定返回绿色黏液球
-                            stack1.setCount(cap / 10);
+                            stack1.setCount(cap / 20);
 
                             String itemId3 = ForgeRegistries.ITEMS.getKey(stack1.getItem()).toString();
 
