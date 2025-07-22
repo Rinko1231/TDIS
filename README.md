@@ -53,10 +53,10 @@ Sometimes you might not be satisfied with the Tinkers' tool you made. This mod a
 - 🔒 `Tool Disassemble Blacklist`: Prevents certain tools from being dismantled (e.g. **plate_shield** by default due to dupe bugs)
 
 - ❌ `物品返还黑名单`：拆解时不返还其中物品（默认添加了**下界石英**）  
-- ❌ `Material Return Blacklist`: Prevents certain items (like **Nether Quartz**) from being returned
+- ❌ `Item Disassemble Blacklist`: Prevents certain items (like **Nether Quartz**) from being returned
 
-- 🧱 `触发拆解的方块`：可以自定义哪些方块可右键触发拆解（默认是**平滑石头**）  
-- 🧱 `Trigger Block`: You can configure which blocks trigger dismantling (default: **Smooth Stone**)
+- 🧱 `触发拆解的方块名单`：可以自定义哪些方块可右键触发拆解（默认是**平滑石头**）  
+- 🧱 `Disassembling Block Set`: You can configure which blocks trigger dismantling (default: **Smooth Stone**)
 
 ---
 
