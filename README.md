@@ -1,4 +1,4 @@
-## 🔧 工具拆解 Tool Disassemble
+## 🔧 拆器碎散/匠魂工具拆解 Tool Disassemble
 
 有时候你可能对你做出的匠魂工具不满意，本模组添加了一个“工具拆解器”，用于将你的匠魂工具拆回原材料。  
 Sometimes you might not be satisfied with the Tinkers' tool you made. This mod adds a *Disassembling Tool* that lets you dismantle your Tinkers' tools back into parts and materials.
