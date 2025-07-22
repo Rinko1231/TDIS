@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tooldisassemble:item/disassembling_tool"
+  }
+}

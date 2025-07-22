@@ -1,0 +1,11 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+license = "GPLv3"
+[[mods]]
+modId = "tooldisassemble"
+version = "1.20.1-1.0.0"
+displayName = "Tool Disassemble"
+authors = "rinko1231"
+description = '''
+Disassemble TiC tools
+'''
