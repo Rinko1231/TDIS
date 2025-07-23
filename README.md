@@ -15,7 +15,6 @@ Sometimes you might not be satisfied with the Tinkers' tool you made. This mod a
 
 - 对特定方块右键（默认是**平滑石头**，可配置）  
 - Right-click on a specific block (**Smooth Stone** by default, configurable)
-
 - 即可自动拆解**快捷栏第一个可拆工具**  
 - It will automatically dismantle the **first disassemblable tool** in your hotbar
 
