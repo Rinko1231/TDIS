@@ -46,13 +46,13 @@ import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 import slimeknights.tconstruct.tools.modifiers.slotless.OverslimeModifier;
 
-import java.util.List;
+import java.util.*;
 
 @Mod("tooldisassemble")
 public class ToolDisassemble {
     public static final String MODID = "tooldisassemble";
-    public static final String MODNAME = "Tool Disassemble";
-    public static final Logger LOGGER = LogManager.getLogger(MODNAME);
+    public static final String MOD_NAME = "Tool Disassemble";
+    public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
     public ToolDisassemble() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ItemList.ITEMS.register(modEventBus);
@@ -60,6 +60,22 @@ public class ToolDisassemble {
         DisassembleConfig.setup();
         MinecraftForge.EVENT_BUS.register(this);
     }
+    public static final Set<String> SPECIAL_TOOL_BLACKLIST = new HashSet<>(Arrays.asList(
+            "tconstruct:plate_shield",
+            "tconstruct:war_pick",
+            "tconstruct:melting_pan",
+            "tconstruct:battlesign",
+            "tconstruct:swasher",
+            "tconstruct:travelers_helmet",
+            "tconstruct:travelers_chestplate",
+            "tconstruct:travelers_leggings",
+            "tconstruct:travelers_boots",
+            "tconstruct:travelers_shield",
+            "tconstruct:slime_helmet",
+            "tconstruct:slime_chestplate",
+            "tconstruct:slime_leggings",
+            "tconstruct:slime_boots"
+    ));
 
     @SubscribeEvent
     public void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
@@ -85,7 +101,7 @@ public class ToolDisassemble {
             if (!stackDis.isEmpty() && stackDis.getItem() instanceof IModifiableDisplay) {
                 hasModifiableTool = true;
                 String stackID = ForgeRegistries.ITEMS.getKey(stackDis.getItem()).toString();
-                if (!DisassembleConfig.toolDisassembleBlacklist.get().contains(stackID)) {
+                if (! (DisassembleConfig.toolDisassembleBlacklist.get().contains(stackID) || SPECIAL_TOOL_BLACKLIST.contains(stackID))) {
                     // 拆解第一个可拆的工具
                     disassembleTool(world, player, i, pos);
                     player.swing(InteractionHand.MAIN_HAND);
@@ -255,8 +271,7 @@ public class ToolDisassemble {
                     }
                 }
             }
-            List<IToolPart> components = ToolPartsHook.parts(((IModifiable) stack.getItem()).getToolDefinition()).stream().toList();
-
+           List<IToolPart> components = ToolPartsHook.parts(((IModifiable) stack.getItem()).getToolDefinition()).stream().toList();
             if (!components.isEmpty()) {
 
                 MaterialNBT materials = toolStack.getMaterials();

@@ -19,14 +19,17 @@ public class DisassembleConfig {
 
         itemDisassembleBlacklist = BUILDER
                 .comment("items that will not be returned through Disassembling.")
-                .define("itemDisassembleBlacklist", List.of("minecraft:quartz", "notNull:doNotDelete"));
+                .defineList("itemDisassembleBlacklist", List.of("minecraft:quartz"),
+                        element -> element instanceof String);
         toolDisassembleBlacklist = BUILDER
                 .comment("Tools that can not be Disassembled.")
-                .comment("Plate Shield has a duplicate bug, do not remove it.")
-                .define("toolDisassembleBlacklist", List.of("tconstruct:plate_shield"));
+                .defineList("toolDisassembleBlacklist",
+                        List.of("tconstruct:plate_shield"),
+                element -> element instanceof String);
         disassemblingBlockSet = BUILDER
                 .comment("Blocks that can be used for Disassembling.")
-                .define("disassemblingBlockSet", List.of("minecraft:smooth_stone"));
+                .defineList("disassemblingBlockSet", List.of("minecraft:smooth_stone"),
+                element -> element instanceof String);
 
         SPEC = BUILDER.build();
     }
