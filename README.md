@@ -46,7 +46,7 @@ Sometimes you might not be satisfied with the Tinkers' tool you made. This mod a
 - So if the first recipe uses blocks, and you used dust, you **might lose** some materials
  
 - 镶板盾牌，远古工具（如喷流枪、战斗牌子、熔炼锅），旅行者套装，史莱姆套装**无法被拆解**。
-- Plate Shield, Ancient Tools (like Swasher, Battlesign, Melting Pan etc.), Travelers Suit, Slime Suit **can not be disassembled**.
+- Plate Shield, Ancient Tools (like Swasher, Battlesign, Melting Pan etc.), Travelers Suit, and Slime Suit **can not be disassembled**.
 
 ---
 
