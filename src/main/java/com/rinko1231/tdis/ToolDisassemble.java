@@ -178,6 +178,7 @@ public class ToolDisassemble {
                                 {
                                     player.drop(stack1, false);
                                 }}
+
                                 toolStack.removeModifier(modifier.getId(), entry.getLevel());
                             }
                                 else {
